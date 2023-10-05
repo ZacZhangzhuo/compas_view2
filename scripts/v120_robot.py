@@ -4,8 +4,8 @@ from compas_view2.app import App
 from compas.geometry import Box
 from compas.geometry import Frame
 
-github = GithubPackageMeshLoader('ros-industrial/abb', 'abb_irb6600_support', 'kinetic-devel')
-model = RobotModel.from_urdf_file(github.load_urdf('irb6640.urdf'))
+github = GithubPackageMeshLoader("ros-industrial/abb", "abb_irb6600_support", "kinetic-devel")
+model = RobotModel.from_urdf_file(github.load_urdf("irb6640.urdf"))
 model.load_geometry(github)
 # model = RobotModel.ur5(False)
 
@@ -18,9 +18,10 @@ end_effector_link_obj.add(Box(Frame([0, 0, 0.25], [1, 0, 0], [0, 1, 0]), 0.2, 0.
 
 for joint_name in model.get_configurable_joint_names():
 
-    @viewer.slider(title=joint_name, minval=-180 , maxval=180)
+    @viewer.slider(title=joint_name, minval=-180, maxval=180)
     def rotate(angle, joint_name=joint_name):
         robotObj.rotate_joint(joint_name, angle)
         viewer.view.update()
+
 
 viewer.show()
