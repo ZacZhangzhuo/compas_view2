@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Added `absolute_height` option to the text object.
 * Added `font` option to `TextObject`.
 * Multi-cursor visual effects.
+* Added the example file `v120_on_select.py` for the issue [Custom function called if object is selected](https://github.com/compas-dev/compas_view2/issues/167).
 
 ### Changed
 
